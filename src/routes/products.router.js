@@ -1,13 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const querystring = require("querystring");
+
+const controller = require("../controllers/products.controller");
 //modulo querystring que resuelve limit, &sort=asc, etc
-router.get("/", (req, res) => {
-  const query = querystring.stringify(req.query);
-  fetch("https://fakestoreapi.com/products?" + query)
-    .then((res) => res.json())
-    .then((producto) => res.send(producto));
-});
+router.get("/", controller.index);
 //nva ruta /productos desde fakesotreapi
 // router.get("/productos", (req, res) => {
 //   fetch("https://fakestoreapi.com/products")
@@ -15,11 +11,7 @@ router.get("/", (req, res) => {
 //     .then((productos) => res.send(productos));
 // });
 //buscar 1 producto fakestoreapi x id=>/productos/:idapi
-router.get("/:id", (req, res) => {
-  fetch("https://fakestoreapi.com/products/" + req.params.id)
-    .then((res) => res.json())
-    .then((producto) => res.send(producto));
-});
+router.get("/:id", controller.searchId);
 
 // //limitar busqueda con query
 // router.get("/productos", (req, res) => {
