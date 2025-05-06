@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>Productos</h1>
+    <section class="products">
+      <!-- No es pubic=>En controller/products.controller.js (modif json x render(products)) -->
+      <% data.forEach(producto => { %>
+      <h2><%= producto.title %></h2>
+      <p><%= producto.description %></p>
+
+      <% }) %>
+    </section>
+  </body>
+</html>

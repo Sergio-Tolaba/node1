@@ -4,6 +4,10 @@ const app = express();
 const path = require("path");
 //middleware
 app.use(express.static(path.join(__dirname, "public")));
+
+//motor ejs
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "src/views"));
 //Routes Ej principal la llevé a src/routes/main.router.js, luego la llamo y la uso
 const mainRouter = require("./src/routes/main.router");
 app.use(mainRouter);
