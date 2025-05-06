@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <h1>Productos</h1>
+    <header>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Productos</h1>
+    </main>
+
     <section class="products">
       <!-- No es pubic=>En controller/products.controller.js (modif json x render(products)) -->
       <% data.forEach(producto => { %>
@@ -16,5 +25,8 @@
 
       <% }) %>
     </section>
+    <footer>
+      <small> copyrigth 2025 </small>
+    </footer>
   </body>
 </html>
